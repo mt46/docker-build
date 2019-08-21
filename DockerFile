@@ -1,12 +1,5 @@
-FROM centos:latest
+# DevOps v1.0
+FROM mt46/devops:latest
 
-ENV TZ=Asia/Singapore
-
-# Set Timezone, System Update, Install pip, Install EPEL repo, Install Ansible
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
-&& yum -y update \
-&& curl -O https://bootstrap.pypa.io/get-pip.py && python get-pip.py --user \
-&& export PATH=~/.local/bin:$PATH && source ~/.bash_profile && pip install awscli --upgrade --user \
-&& echo 'pathmunge ~/.local/bin' > /etc/profile.d/awscli.sh && chmod +x /etc/profile.d/awscli.sh \
-&& yum -y install epel-release \
-&& yum -y install ansible
+# Install Utilities: openssh-clients bind-utils git
+RUN yum -y install openssh-clients bind-utils git

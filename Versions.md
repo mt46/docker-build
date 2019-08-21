@@ -4,7 +4,7 @@
 Added utilities
 - SSH client (openssh-clients)
 - DNS clients (bind-utils)
-- Git
+- Git (git)
 
 #### latest (Initial)
 - CentOS 7
