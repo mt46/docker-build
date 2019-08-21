@@ -1,12 +1,12 @@
 # Version History
 
-#### 1.0.0
+#### v1.0 (latest)
 Added utilities
+- AWS CLI
+- Ansible
 - SSH client (openssh-clients)
 - DNS clients (bind-utils)
 - Git (git)
 
-#### latest (Initial)
+#### baseos (Initial)
 - CentOS 7
-- AWS CLI
-- Ansible
