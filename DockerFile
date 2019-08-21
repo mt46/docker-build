@@ -1,0 +1,12 @@
+FROM centos:latest
+
+ENV TZ=Asia/Singapore
+
+# Set Timezone, System Update, Install pip, Install EPEL repo, Install Ansible
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
+&& yum -y update \
+&& curl -O https://bootstrap.pypa.io/get-pip.py && python get-pip.py --user \
+&& export PATH=~/.local/bin:$PATH && source ~/.bash_profile && pip install awscli --upgrade --user \
+&& echo 'pathmunge ~/.local/bin' > /etc/profile.d/awscli.sh && chmod +x /etc/profile.d/awscli.sh \
+&& yum -y install epel-release \
+&& yum -y install ansible
