@@ -1,3 +1,4 @@
+# Build on 17 Oct 2019
 FROM centos:latest
 
 ENV TZ=Asia/Singapore
